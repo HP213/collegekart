@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Admin Panel</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/product.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar">
+<!-- Preloader - style you can find in spinners.css -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+</div>
+<!-- Main wrapper  -->
+<div id="main-wrapper">
+    <!-- header header  -->
+    <div class="header">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- Logo -->
+
+            <!-- End Logo -->
+            <div class="navbar-collapse">
+                <!-- toggle and nav items -->
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <!-- This is  -->
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                    <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
+
+                    <!-- Search -->
+                    <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                    </li>
+                    <!--done-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/images/download.png" alt="user" class="profile-pic" /></a>
+                        <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                            <ul class="dropdown-user">
+                                <li><a href="/"><i class="ti-user"></i> Dashboard</a></li>
+                                <li><a href="/admin/changepassword"><i class="ti-settings"></i> Change Password</a></li>
+                                <li><a href="/admin/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- End header header -->
+    <!-- Left Sidebar  -->
+    <div class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="nav-devider"></li>
+                    <li class="nav-label">Home</li>
+                    <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-product-hunt"></i><span class="hide-menu">Product </span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/products">Products </a></li>
+                            <li><a href="/addnew">Add New Product </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Features</li>
+                    <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Orders</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/orders">View All Orders</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </div>
+    <!-- End Left Sidebar  -->
+    <!-- Page wrapper  -->
+    <div class="page-wrapper">
+        <!-- Bread crumb -->
+        <!-- End Bread crumb -->
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+            <!-- Start Page Content -->
+            <div class="jumbotron">
+            <div class="container-fluid">
+              <h1 class="text-center mb-3">Mobiles</h1>
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner row w-100 mx-auto">
+                  <div class="carousel-item col-md-4 active">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="http://images.frandroid.com/wp-content/uploads/2018/04/oneplus-6-rendu.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">One Plus 6</h4>
+                        <p class="card-text">
+                    Qualcomm Snapdragon 845, 8 GB RAM,
+                storage:256 GB,
+
+            Battery Capacity:3300 mAh
+
+             </p>
+                        <h5>  <p class="card-text">Rs.35,000</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 1 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://i.ytimg.com/vi/pt5W0fD6Gbc/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Samsung Galaxy S9 plus</h4>
+                        <p class="card-text">Octa core (2.7 GHz, Quad core, M2 Mongoose + 1.7 GHz, Quad core, Cortex A53) processor , 6 GB of RAM.  </p>
+                        <h5>  <p class="card-text">Rs.54,000</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 1 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="http://vrzone.com/wp-content/uploads/2017/01/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">ASUS Zenfone AR</h4>
+                        <p class="card-text">Quad core (2.35 GHz, Dual Core + 1.6 GHz, Dual core) Snapdragon 821, 8 GB RAM</p>
+                        <h5>  <p class="card-text">Rs.49,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://i0.wp.com/www.reviewbad.com/wp-content/uploads/2018/01/Pixel-2-xl.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Google Pixel 2 xl</h4>
+                        <p class="card-text">Android 8.0 with Google UI
+            Processor 	Qualcomm Snapdragon 835 	Qualcomm Snapdragon 835
+            </p>
+              <h5>  <p class="card-text">Rs.49,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://wallpapershome.com/images/pages/pic_hs/13509.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">HTC U11</h4>
+                        <p class="card-text">Qualcomm Snapdragon 835
+            processor	Octa core (2.45 GHz, Quad core, Kryo 280 + 1.9 GHz),
+
+            RAM	6 GB</p>
+            <h5>  <p class="card-text">Rs.39,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://www.gadgetmatch.com/wp-content/uploads/2018/01/LG-V30-Raspberry-Rose-Header.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">LG V30</h4>
+                        <p class="card-text">Octa core (2.45 GHz, Quad Core + 1.9 GHz, Quad core)
+            Snapdragon 835
+            4 GB RAM</p>
+                        <h5>  <p class="card-text">Rs.38,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="http://static.dnaindia.com/sites/default/files/styles/full/public/2018/02/15/651675-595913-moto-z2-force.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Moto Z2 Force</h4>
+                        <p class="card-text">Tru-Octa Core (2.35 GHz, Quad Core + 1.9 GHz, Quad core)Snapdragon 835, 6 GB RAM</p>
+                        <h5>  <p class="card-text">Rs.34,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="http://himbuzz.com/wp-content/uploads/2018/03/HONOR-9-LITE-64GB.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Honor 9 Lite</h4>
+                        <p class="card-text">Octa Core, 1.8 GHz Snapdragon 636 ,6 GB RAM 12 MP + 5 MP Dual Primary Cameras
+            Dual-color LED Flash</p>
+                        <h5>  <p class="card-text">Rs.11,479</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            </div>
+            </div>
+            <!--Laptops-->
+
+            <div class="container-fluid">
+              <h1 class="text-center mb-3">Laptops</h1>
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner row w-100 mx-auto">
+                  <div class="carousel-item col-md-4 active">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://i.ytimg.com/vi/QqlPzb-FCcM/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Lenovo Legion Y520</h4>
+                        <p class="card-text">    CPU: 2.8GHz Intel Core i7-7700HQ (dual-core, 6MB cache, up to 3.8GHz)
+                Graphics: Nvidia GeForce GTX 1050 Ti (4GB GDDR5 RAM);
+                RAM: 16GB DDR4 </p>
+                        <h5>  <p class="card-text">Rs.35,000</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 1 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://i.ytimg.com/vi/0jc8t9CkQlU/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">MSI GS65 Stealth</h4>
+                        <p class="card-text">CPU: Intel Core i7 | Graphics: Nvidia GeForce GTX 1070 (8GB GDDR5X VRAM, Max-Q) | RAM: 16GB | Screen: 15.6-inch FHD (1,920 x 1,080) anti-glare, wide-view 144Hz panel   </p>
+                        <h5>  <p class="card-text">Rs.1,61,000</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 1 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://i.ytimg.com/vi/HHZ14In22I0/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Asus ROG Strix GL502VS-DS71</h4>
+                        <p class="card-text">The best gaming laptop is the Asus ROG Strix GL502VS-DS71. With an Intel Core i7-7700HQ CPU, GTX 1070 graphics card, 16GB DDR4  and a 120Hz G-Sync screen. </p>
+                        <h5>  <p class="card-text">Rs.90,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://www.gadgetmatch.com/wp-content/uploads/2018/05/GadgetMatch-Acer-Predator-Helios-300-20180504-9.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Acer Predator Helios 300</h4>
+                        <p class="card-text"> features an Intel Core i7-7700HQ CPU, 16GB DDR4 RAM, and the aforementioned Nvidia GeForce GTX 1060 GPU. The biggest variance between laptops tested is in the storage spec.</p>
+              <h5>  <p class="card-text">Rs.99,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://360view.hum3d.com/original/Asus/ASUS_ROG_G751JT_360_720_50-19.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title"> ASUS RoG G751JY</h4>
+                        <p class="card-text">    CPU: Intel Core i7-7820HK
+                RAM: 16 GB
+                Display size: 17.3″
+                Graphics Card: NVIDIA GTX 1070 8GB
+                Wi-Fi: 802.11ac
+                Weight: 9.5 pounds |Super quiet gaming experience
+            Backed up by powerful performance</p>
+            <h5>  <p class="card-text">Rs.1,90,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://360view.hum3d.com/original/Dell/Dell_Alienware_13_360_720_50-1.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Dell_Alienware_13</h4>
+                        <p class="card-text">    CPU: 6th Gen i7 processor
+                RAM: 16 GB
+                Display size: 13.3-inch FHD
+                Touchpad size: 4.27″x2.67″
+                Native Resolution: 1920×1080
+                Graphics Card: NVIDIA® GeForce® GTX 960M, 2GB GDDR5
+                Wi-Fi: Killer 1535 802.11ac 2×2 WiFi
+                Weight: 4.5 pounds | backlit keyboard</p>
+                        <h5>  <p class="card-text">Rs.90,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src=" https://i.ytimg.com/vi/ypTur-St9uE/maxresdefault.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title"> MSI GT80 Titan SLI</h4>
+                        <p class="card-text">    CPU: Intel Core i7-4720HQ, 2.6GHz
+                RAM: 16 GB
+                Display size: 18.4″
+                Storage type: HDD, SSD
+                Native resolution: 1920×1080
+                Graphics Card: Nvidia GeForce GTX 980M
+                Wi-Fi: 802.11ac
+                Weight: 9.9 pounds</p>
+                        <h5>  <p class="card-text">Rs.99,999</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item col-md-4">
+                    <div class="card">
+                      <img class="card-img-top img-fluid" src="https://cdn.cgmagonline.com/wp-content/uploads/2017/02/razer-unleashes-latest-2017-14-blade-laptop-6-1280x720.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title"> Razer Blade 14</h4>
+                        <p class="card-text">    CPU: Intel Core i7-4720HQ
+                RAM: 8GB DDR3L
+                Display size: 18.4″
+                Storage: 256GB SSD
+                Native resolution: 1920×1080
+                Graphics Card: Nvidia GeForce GTX 970M
+                Wi-Fi: Killer Wireless-AC 1535
+                Weight: 4.25 pounds</p>
+                        <h5>  <p class="card-text">Rs.80,479</p></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 sec ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- End PAge Content -->
+        </div>
+    <!-- End Container fluid  -->
+    <!-- footer -->
+    <footer class="footer"> © 2018 All rights reserved. </footer>
+    <!-- End footer -->
+</div>
+<!-- End Page wrapper  -->
+</div>
+
+<!-- End Wrapper -->
+<!-- All Jquery -->
+<script src="js/lib/jquery/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="js/lib/bootstrap/js/popper.min.js"></script>
+<script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
+
+
+<!-- Amchart -->
+<script src="js/lib/morris-chart/raphael-min.js"></script>
+<script src="js/lib/morris-chart/morris.js"></script>
+<script src="js/lib/morris-chart/dashboard1-init.js"></script>
+
+
+<script src="js/lib/calendar-2/moment.latest.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/semantic.ui.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/prism.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/pignose.calendar.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/pignose.init.js"></script>
+
+<script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js//product.js">
+
+</script>
+
+<!-- scripit init-->
+
+
+</body>
+
+</html>
